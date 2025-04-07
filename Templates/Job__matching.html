@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skill & Keyword Matching</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='keyword.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='Images/AI__Logo.jpg') }}" alt="AI powered Resume Analyzer system">
+            <h2>AI Powered<br>Resume System</h2>
+        </div>
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <input type="search" class="search-bar" placeholder="Search...">
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Login</a></li>
+        </ul>
+    </nav>
+  <div class="container">
+    <h1>Skill & Keyword Matching</h1>
+    <div class="section">
+      <h2>Job Description</h2>
+      <div class="form-group">
+        <label for="requiredSkills">Required Skills:</label>
+        <textarea id="requiredSkills"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="preferredSkills">Preferred Skills:</label>
+        <textarea id="preferredSkills"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="experienceLevel">Experience Level:</label>
+        <input type="text" id="experienceLevel">
+      </div>
+      <div class="form-group">
+        <label for="educationLevel">Education Level:</label>
+        <input type="text" id="educationLevel">
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Candidate Resume</h2>
+      <div class="form-group">
+        <label for="candidateSkills">Candidate Skills:</label>
+        <textarea id="candidateSkills"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="industryExperience">Industry Experience:</label>
+        <input type="text" id="industryExperience">
+      </div>
+      <div class="form-group">
+        <label for="jobTitle">Job Title:</label>
+        <input type="text" id="jobTitle">
+      </div>
+      <div class="form-group">
+        <label for="yearsExperienceRequired">Years of Experience Required:</label>
+        <input type="number" id="yearsExperienceRequired">
+      </div>
+      <div class="form-group">
+        <label for="yearsExperienceAvailable">Years of Experience Available:</label>
+        <input type="number" id="yearsExperienceAvailable">
+      </div>
+    </div>
+
+    <button id="matchButton">Match Candidates</button>
+
+    <div class="result" id="matchResult" style="display: none;">
+      <h3>Match Result</h3>
+      <p>Direct Skill Match: <span id="directSkillMatch"></span>%</p>
+      <p>Related Skills: <span id="relatedSkills"></span></p>
+      <p>Keyword Frequency Score: <span id="keywordFrequencyScore"></span></p>
+      <p>Industry Experience Match: <span id="industryExperienceMatch"></span></p>
+      <p>Job Title Match: <span id="jobTitleMatch"></span>%</p>
+      <p>Years of Experience: <span id="yearsExperienceMatch"></span></p>
+      <p class="match-score">Overall Match Score: <span id="overallMatchScore"></span>%</p>
+      <p class="ranking">Ranking: <span id="candidateRanking"></span></p>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-columns">
+      <div class="footer-column">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Connect</h3>
+        <ul>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Skill & Keyword Matching</p>
+    </div>
+  </footer>
+  <script src="{{ url_for('static', filename='match.js') }}" defer></script>
+</body>
+</html>
+
+  
