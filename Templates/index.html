@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Resume System</title>
+    <!-- Use Flask's url_for to reference static files -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='Images/AI__Logo.jpg') }}" alt="AI powered Resume Analyzer system">
+            <h2>AI Powered<br>Resume System</h2>
+        </div>
+        <div class="hamburger-menu">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About Us</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+        </ul>
+    </nav>
+    <div class="sidebar-hamburger-menu">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="dashboard">
+        <div class="sidebar">
+            <h3>Dashboard</h3>
+            <ul>
+                <li><a href="{{ url_for('resume_upload') }}">Upload Resume</a></li>
+                <li><a href="{{ url_for('scoring_and_ranking') }}">Job scoring and ranking</a></li>
+                <li><a href="{{ url_for('candidate_screening') }}">Candidate Screening</a></li>
+                <li><a href="{{ url_for('AT_HRtrack') }}">Job Recommendations</a></li>
+            </ul>
+        </div>
+        <section class="container">
+            <h1>AI Resume System</h1>
+            <div class="contain__sec">
+                <p class="section">Welcome to AI automated resume screening and job matching for the applicants</p>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="footer__columns">
+            <div class="footer__column">
+                <ul>
+                    <li><a href="#">Job matching</a></li>
+                    <li><a href="#">Candidate screening</a></li>
+                    <li><a href="#">Post jobs</a></li>
+                </ul>
+            </div>
+            <div class="footer__column">
+                <ul>
+                    <li><a href="#">Resume Automate</a></li>
+                    <li><a href="#">Interview</a></li>
+                    <li><a href="#">Shortlisting</a></li>
+                </ul>
+            </div>
+            <div class="footer__column">
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>&copy; 2025 AI Resume System. Follow us on</p>
+        </div>
+    </footer>
+
+    <!-- Use Flask's url_for to reference JavaScript files -->
+    <script src="{{ url_for('static', filename='index.js') }}" defer></script>
+</body>
+</html>
+
+
+

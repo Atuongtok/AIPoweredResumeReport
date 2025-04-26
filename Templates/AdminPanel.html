@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resume Analyzer Dashboard</title>
+  <link rel="stylesheet" href="/Static/admin.css"/>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='Images/AI__Logo.jpg') }}" alt="AI powered Resume Analyzer system">
+            <h2>AI Powered<br>Resume System</h2>
+        </div>
+        <div class="hamburger-menu">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Login</a></li>
+        </ul>
+    </nav>
+  <div class="container">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <h2>Admin Panel</h2>
+      <ul>
+        <li onclick="showPage('dashboard')">Dashboard</li>
+        <li onclick="showPage('upload-resume')">Upload Resume</li>
+        <li onclick="showPage('upload-job')">Upload Job</li>
+        <li onclick="showPage('resumes')">Resume List</li>
+        <li onclick="showPage('jobs')">Job List</li>
+        <li onclick="showPage('matching')">Matching</li>
+        <li onclick="showPage('ranking')">Candidate Ranking</li>
+        <li onclick="showPage('schedule')">Interview Schedule</li>
+        <li onclick="showPage('reports')">Reports</li>
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main" id="main-content">
+      <div id="dashboard" class="page">
+        <h1>Dashboard Overview</h1>
+        <div class="card-container">
+          <div class="card">📄 Resumes: <span id="resumeCount">0</span></div>
+          <div class="card">💼 Jobs: <span id="jobCount">0</span></div>
+          <div class="card">🔍 Matches: <span id="matchCount">0</span></div>
+        </div>
+      </div>
+
+      <div id="upload-resume" class="page hidden">
+        <h1>Upload Resume</h1>
+        <input type="file" id="resumeFile" accept=".pdf,.doc,.docx,.txt"/>
+        <button onclick="uploadResume()">Upload</button>
+        <p id="uploadStatus"></p>
+      </div>
+
+      <div id="upload-job" class="page hidden">
+        <h1>Upload Job Description</h1>
+        <input type="text" id="jobTitle" placeholder="Job Title"/>
+        <textarea id="jobDescription" rows="5" placeholder="Enter job description here..."></textarea>
+        <button onclick="uploadJob()">Submit</button>
+        <p id="jobStatus"></p>
+      </div>
+
+      <!-- Add more pages here -->
+    </div>
+  </div>
+
+  <script src="/Static/admin.js"></script>
+</body>
+</html>

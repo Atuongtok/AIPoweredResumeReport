@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interview Scheduling</title>
+  <link rel="stylesheet" href="/Static/interview.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>📅 Interview Scheduler</h1>
+
+    <form id="interviewForm">
+      <div class="form-group">
+        <label for="candidate">Select Candidate</label>
+        <select id="candidate" required>
+          <option value="" disabled selected>Select a candidate</option>
+          <option value="john@example.com">John Doe</option>
+          <option value="jane@example.com">Jane Smith</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="job">Select Job Position</label>
+        <select id="job" required>
+          <option value="" disabled selected>Select a job</option>
+          <option value="Software Engineer">Software Engineer</option>
+          <option value="Data Analyst">Data Analyst</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="datetime">Choose Date & Time</label>
+        <input type="datetime-local" id="datetime" required />
+      </div>
+
+      <button type="submit" class="btn">Send Invite</button>
+    </form>
+
+    <div class="calendar-view">
+      <h2>📆 Calendar View (Upcoming Interviews)</h2>
+      <ul id="calendarList">
+        <!-- Entries will show here -->
+      </ul>
+    </div>
+  </div>
+
+  <script src="/Static/intri.js"></script>
+</body>
+</html>
